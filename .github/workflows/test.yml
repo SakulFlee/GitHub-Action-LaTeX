@@ -1,0 +1,30 @@
+name: Test GitHub Action
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile test LaTeX document
+        uses: ./
+        with:
+          latex_main_file: test.tex
+          working_directory: latex_test_project/
+          latex_compiler: latexmk
+          latex_compiler_arguments: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+          system_packages: "gcc"
+          pre_task: "'Hello, World!' from BEFORE compilation."
+          post_task: "'Hello, World!' from AFTER compilation."
+
+      - name: Check pdf files
+        run: |
+          file latex_test_project/test.pdf
+
+      - name: Upload
+        uses: actions/upload-artifact@master
+        with:
+          name: test.pdf
+          path: latex_test_project/
+        if: always()
