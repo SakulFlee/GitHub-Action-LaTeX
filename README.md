@@ -38,7 +38,7 @@ jobs:
 You can also upload the PDF as an artifact afterwards using [actions/upload-artifact@master](https://github.com/marketplace/actions/upload-a-build-artifact):  
 
 ```yaml
-name: Test GitHub Action
+name: Build LaTeX Document
 on: [push, pull_request]
 jobs:
   test:
@@ -65,7 +65,7 @@ jobs:
 There are more options available if needed:
 
 ```yaml
-name: Test GitHub Action
+name: Build LaTeX Document
 on: [push, pull_request]
 jobs:
   test:
