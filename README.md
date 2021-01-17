@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: my_latex_file.pdf
-          path: my_latex_project_path/ # Optional
+          path: ./ 
         if: always()
 ```
 
