@@ -11,6 +11,7 @@ View on [Marketplace](https://github.com/marketplace/actions/latex-document-comp
 | `main`     | yes     | yes     | The main branch. All release changes will be merged into here. |
 | `v0.0.1`   | yes     | yes     | First preview version. Does include everything needed.         |
 | `v0.0.2`   | yes     | yes     | README updates / Clearer usage                                 |
+| `v0.0.3`   | yes     | yes     | Added better script output                                     |
 | `v1.0.0`   | **no**  | yes     | The first release version. Does include everything needed.     |
 
 ## Basic usage
