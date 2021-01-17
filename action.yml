@@ -1,4 +1,4 @@
-name: LaTeX rolling compiler
+name: LaTeX document compiler
 description: GitHub Action for compiling LaTeX documents
 author: Sakul6499 | Lukas Weber
 inputs:
