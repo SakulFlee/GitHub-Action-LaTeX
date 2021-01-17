@@ -6,8 +6,12 @@ FROM archlinux:latest
 RUN pacman -Sy \
     && pacman -S --noconfirm texlive-most
 
-# Copy entrypoint
+# Entrypoint
+## Copy entrypoint
 COPY entrypoint.sh /
 
-# Set entrypoint
+## Mark entrypoint as executable
+RUN chmod +x /entrypoint.sh
+
+## Set entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
