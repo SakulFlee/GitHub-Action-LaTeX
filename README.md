@@ -6,13 +6,13 @@ View on [Marketplace](https://github.com/marketplace/actions/latex-document-comp
 
 ## Versions
 
-| Branch/Tag | Preview | Release | Description                                                    |
-| ---------- | ------- | ------- | -------------------------------------------------------------- |
-| `main` (branch)     | yes     | no      | The main branch. All release changes will be merged into here. |
-| `v1.0.0` (tag)   | **no**  | yes     | The first release version. Does include everything needed.     |
-| `v0.0.3` (tag)   | yes     | yes     | Added better script output                                     |
-| `v0.0.2` (tag)   | yes     | yes     | README updates / Clearer usage                                 |
-| `v0.0.1` (tag)   | yes     | yes     | First preview version. Does include everything needed.         |
+| Branch/Tag      | Preview | Release | Description                                                    |
+| --------------- | ------- | ------- | -------------------------------------------------------------- |
+| `main` (branch) | yes     | no      | The main branch. All release changes will be merged into here. |
+| `v1.0.0` (tag)  | **no**  | yes     | The first release version. Does include everything needed.     |
+| `v0.0.3` (tag)  | yes     | yes     | Added better script output                                     |
+| `v0.0.2` (tag)  | yes     | yes     | README updates / Clearer usage                                 |
+| `v0.0.1` (tag)  | yes     | yes     | First preview version. Does include everything needed.         |
 
 
 ## Basic usage
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document
-        uses: Sakul6499/GitHub-Action-LaTeX@v0.0.1
+        uses: Sakul6499/GitHub-Action-LaTeX@v1.0.0
         with:
           latex_main_file: my_latex_file.tex
 
@@ -75,7 +75,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document
-        uses: Sakul6499/GitHub-Action-LaTeX@v0.0.1
+        uses: Sakul6499/GitHub-Action-LaTeX@v1.0.0
         with:
           latex_main_file: my_latex_file.tex
           working_directory: my_latex_project/
