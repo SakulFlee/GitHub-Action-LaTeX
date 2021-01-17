@@ -1,0 +1,41 @@
+name: GitHub Action for LaTeX
+description: GitHub Action to compile LaTeX documents
+author: Sakul6499 | Lukas Weber
+inputs:
+  latex_main_file:
+    description: The main LaTeX file (your root file)
+    required: true
+  working_directory:
+    description: The working directory for the LaTeX engine
+    required: false
+  latex_compiler:
+    description: The LaTeX engine to be invoked
+    default: latexmk
+    required: false
+  latex_compiler_arguments:
+    description: Arguments parsed to the LaTeX compiler
+    default: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+    required: false
+  system_packages:
+    description: Packages to be installed (Arch-based [uses `pacman`]; `TexLive-Most` is installed)
+    required: false
+  pre_task:
+    description: Shell commands to execute _BEFORE_ compiling the LaTeX document
+    required: false
+  post_task:
+    description: Shell commands to execute _AFTER_ compiling the LaTeX document
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.latex_main_file }}
+    - ${{ inputs.working_directory }}
+    - ${{ inputs.latex_compiler }}
+    - ${{ inputs.latex_compiler_arguments }}
+    - ${{ inputs.system_packages }}
+    - ${{ inputs.pre_task }}
+    - ${{ inputs.post_task }}
+branding:
+  icon: book
+  color: blue
