@@ -15,8 +15,8 @@ jobs:
           latex_compiler: latexmk
           latex_compiler_arguments: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
           system_packages: "gcc"
-          pre_task: "'Hello, World!' from BEFORE compilation."
-          post_task: "'Hello, World!' from AFTER compilation."
+          pre_task: 'echo "''Hello, World!'' from BEFORE compilation."'
+          post_task: 'echo "''Hello, World!'' from AFTER compilation."'
 
       - name: Check pdf files
         run: |
