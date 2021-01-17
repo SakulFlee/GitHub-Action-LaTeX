@@ -8,11 +8,12 @@ View on [Marketplace](https://github.com/marketplace/actions/latex-document-comp
 
 | Branch/Tag | Preview | Release | Description                                                    |
 | ---------- | ------- | ------- | -------------------------------------------------------------- |
-| `main`     | yes     | yes     | The main branch. All release changes will be merged into here. |
-| `v0.0.1`   | yes     | yes     | First preview version. Does include everything needed.         |
-| `v0.0.2`   | yes     | yes     | README updates / Clearer usage                                 |
-| `v0.0.3`   | yes     | yes     | Added better script output                                     |
-| `v1.0.0`   | **no**  | yes     | The first release version. Does include everything needed.     |
+| `main` (branch)     | yes     | no      | The main branch. All release changes will be merged into here. |
+| `v1.0.0` (tag)   | **no**  | yes     | The first release version. Does include everything needed.     |
+| `v0.0.3` (tag)   | yes     | yes     | Added better script output                                     |
+| `v0.0.2` (tag)   | yes     | yes     | README updates / Clearer usage                                 |
+| `v0.0.1` (tag)   | yes     | yes     | First preview version. Does include everything needed.         |
+
 
 ## Basic usage
 
@@ -32,6 +33,31 @@ jobs:
         uses: Sakul6499/GitHub-Action-LaTeX@v0.0.1
         with:
           latex_main_file: my_latex_file.tex
+```
+
+You can also upload the PDF as an artifact afterwards using [actions/upload-artifact@master](https://github.com/marketplace/actions/upload-a-build-artifact):  
+
+```yaml
+name: Test GitHub Action
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile LaTeX document
+        uses: Sakul6499/GitHub-Action-LaTeX@v0.0.1
+        with:
+          latex_main_file: my_latex_file.tex
+
+      - name: Upload
+        uses: actions/upload-artifact@master
+        with:
+          name: my_latex_file.pdf
+          path: my_latex_project_path/ # Optional
+        if: always()
 ```
 
 ## Advanced usage
