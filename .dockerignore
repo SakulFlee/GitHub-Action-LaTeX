@@ -1,0 +1,14 @@
+# Git
+/.git/
+
+# GitHub
+/.github/
+/action.yml
+/README.md
+/LICENSE
+
+# Test Project
+/latex_test_project
+
+# Log
+*.log
