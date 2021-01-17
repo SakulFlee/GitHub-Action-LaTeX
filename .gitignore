@@ -1,0 +1,6 @@
+# Test Project
+/latex_test_project/*
+!/latex_test_project/test.tex
+
+# Log
+*.log
