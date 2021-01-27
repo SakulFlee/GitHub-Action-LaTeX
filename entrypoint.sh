@@ -70,6 +70,11 @@ echo ""
 echo ">>> Compiling document"
 
 eval "$LATEX_COMPILER $LATEX_COMPILER_ARGUMENTS $LATEX_MAIN_FILE"
+EXIT_STATUS=$?
+if [ $EXIT_STATUS -ne 0 ]; then
+    echo "LaTeX document compilation failed. Check the log (above) for more information."
+    exit $EXIT_STATUS
+fi
 
 # --- Post Task ---
 if [ ! -z "$POST_TASK" ]; then 
