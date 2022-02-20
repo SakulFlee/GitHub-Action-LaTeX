@@ -4,7 +4,8 @@ FROM archlinux:latest
 # Install `TexLive-Most` package.
 # Note: Contains _most_ of the required LaTeX pacakges.
 RUN pacman -Sy \
-    && pacman -S --noconfirm texlive-most
+    && pacman -Syu \
+    && pacman -S --noconfirm libc6 texlive-most
 
 # Entrypoint
 ## Copy entrypoint
