@@ -3,7 +3,7 @@ FROM archlinux:latest
 
 # Install `TexLive-Most` package.
 # Note: Contains _most_ of the required LaTeX pacakges.
-RUN pacman -Syu --noconfirm texlive 
+RUN pacman -Syu --noconfirm base base-devel texlive 
 
 # Entrypoint
 ## Copy entrypoint
